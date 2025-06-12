@@ -140,7 +140,7 @@ jobs:
             echo "::add-mask::$acrPassword"
             echo acrPassword=$acrPassword >> $GITHUB_OUTPUT
       - name: azure container registry login
-        uses: azure/docker-login@v1
+        uses: azure/docker-login@v2
         with:
           login-server: ${{ env.ACR_NAME }}${{ vars.SUFFIX }}.azurecr.io
           username: ${{ env.ACR_NAME }}${{ vars.SUFFIX }}
