@@ -1,4 +1,7 @@
 name: contoso-traders-provisioning-deployment
+permissions:
+  contents: read
+  pull-requests: write
 
 on:
   workflow_dispatch:
@@ -41,9 +44,6 @@ env:
 
 jobs:
   provision:
-    permissions:
-      contents: read
-      pull-requests: write
     runs-on: ubuntu-22.04
     env:
       AADUSERNAME: ${{ secrets.AADUSERNAME }}
